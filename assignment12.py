@@ -11,8 +11,16 @@ webbrowser.open_new_tab('https://www.youtube.com/results?search_query=%s' % sear
 
 #Q.3- Write a program to rename all the files in a directory and convert them into .jpg file format.
 import os
-for filename in os.listdir("folder1"):
-    dst =filename + ".jpg"
-    src ='folder1'+ filename
-    dst ='folder1'+ dst
+def main():
+    path =  os.getcwd()
+    filenames = os.listdir("folder1")
+    i = 1 
+    for filename in filenames:
+        dst ="Pic" + str(i) + ".jpg"
+        src =filename
+        os.rename(src, dst)
+        i += 1
+if __name__ == '__main__':
+    main()
+
 
